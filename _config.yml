@@ -1,7 +1,7 @@
 title: ""
 author: ""
 description: ""
-baseurl: "portfolio"
+baseurl: /
 
 # Jekyll settings
 permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
