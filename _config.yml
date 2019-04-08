@@ -2,7 +2,6 @@ title: ""
 author: ""
 description: ""
 baseurl: /
-url: "https://www.christophergullbergbrady.com"
 
 # Jekyll settings
 permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
