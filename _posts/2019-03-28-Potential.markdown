@@ -1,3 +1,9 @@
+---
+layout: post
+title: Potential
+img: mockup.jpg
+---
+
 Potential is a First-Person Shooter game that our team made in 10 weeks half time.
 
 I personally contributed to this game project on the rendering and vfx side of things, as I primarily worked with artists and technical artists to achieve the look we were going for. ![](../assets/mockup.jpg)

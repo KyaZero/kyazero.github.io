@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+
+{% if page.name == "index.html" %}
+{% include header.html %}
+{% endif %}
+
 {% if site.show_excerpts and page.name == "index.html" %}
 {% for page in paginator.posts %}
 <article>
@@ -25,13 +30,17 @@ layout: default
 {% else %}
 <article class="archive">
   {{ content }}
-  <header><h1>Posts</h1></header>
-  {% for post in site.posts %}
-  {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
-  <div>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-  </div>
-  {% endfor %}
+  {% if page.name == "index.html" %}
+  {% include portfolio_grid.html %}
+  {% else %}
+ <header><h1>Posts</h1></header>
+ {% for post in site.posts %}
+ {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
+ <div>
+   <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+   <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+ </div>
+ {% endfor %}
+{% endif %}
 </article>
 {% endif %}
