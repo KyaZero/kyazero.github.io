@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Potential
 img: mockup.jpg
+description: First-Person Shooter
 ---
 
 Potential is a First-Person Shooter game that our team made in 10 weeks half time.

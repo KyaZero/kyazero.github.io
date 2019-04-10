@@ -1,0 +1,82 @@
+.pf-section
+    font-weight: 500
+    font-size: 1.1rem
+    margin: 0 0 4em
+
+.pf-project
+    display: block
+    width: 100%
+    text-decoration: none
+    margin: lem 0
+    cursor: pointer
+    padding: 8px
+
+figure 
+    margin: 0
+    padding: 0
+
+.pf-project figure img
+    width: 100%
+    display: block
+    object-fit: cover
+    height: 300px
+    margin: 0
+
+.pf-project figcaption
+    padding: lem
+    background: #966116
+    color: #fff
+
+.desc
+    color: white
+    margin: 0
+    padding: 8px
+
+.cta
+    margin: .5em 0
+    padding: 8px
+
+.pf-project .pf-div
+    display: block
+
+@media screen and (min-width: 960px)
+    .pf-wrapper
+        max-width: 960px
+        margin: 0 auto
+
+    .pf-wrapper .pf-container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 1em
+
+    .pf-project:nth-child(1)
+        grid-column: 1 / span 3
+
+    .pf-project
+        width: 100%
+        height: 300px
+        text-decoration: none
+        margin: 0
+        padding: 20px
+
+    .pf-project figure
+        position: relative
+        overflow: hidden
+
+    .pf-project figure img
+        position: relative
+        z-index: 999
+        transition: transform 0.4s
+        margin: 0
+
+    .pf-project figure:hover img
+        transform: translateY(-90px)
+
+    .pf-project figcaption
+        position: absolute
+        display: block
+        left: 0
+        bottom: 0
+        padding: 0px
+        height: 90px
+        width: 100%

@@ -1,12 +1,18 @@
-<section id="portfolio">
-    <div class="container">
-        <div class="row">
+<section class="pf-section">
+    <div class="pf-wrapper">
+        <div class="pf-container">
             {% for post in site.posts %}
-                <div class="col-sm-4 portfolio-item">
-                    <a href="{{post.url}}" class="portfolio-link">
-                        <img src="assets/{{ post.img }}" class="portfolio-img">
-                    </a>
-                </div>
+            <a class="pf-project" href="{{ post.url }}">
+                <figure>
+                    <img src="assets/{{ post.img }}" alt="What's this?" title="{{post.title}}">
+                    <figcaption>
+                        <div class="pf-div">
+                            <span class="desc">{{ post.description }}</span>
+                            <p class="cta">View Project</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </a>
             {% endfor %}
         </div>
     </div>

@@ -37,56 +37,6 @@ article header h1
 article footer
   padding: 1em 0
 
-@mixin centerer($horizontal: true, $vertical: true)
-  position: absolute
-  @if ($horizontal and $vertical)
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-  @else if ($horizontal) 
-    left: 50%
-    transform: translate(-50%, 0)
-  @else if ($vertical) 
-    top: 50%
-    transform: translate(0, -50%)
-
-.container
-  // @include centerer(true, false)
-  position: relative
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  width: 100%
-
-.img-responsive
-  @include centerer(true, false)
-  position: relative
-  border-radius: 50%
-  width: 150px
-  height: 150px
-
-.portfolio-img
-  width: 150px
-  height: 150px
-  margin: 5px
-  border-radius: 10%
-
-.name
-  font-size: 2.0em
-  position: relative
-  display: flex
-  align-items: center
-  justify-content: center
-
-.skills
-  font-size: 1.45em
-  user-select: text
-  position: relative
-  display: flex
-  align-items: center
-  justify-content: center
-
 {% unless site.hide_title %}
 {% if site.navigation and site.icons %}
 
