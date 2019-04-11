@@ -42,12 +42,12 @@ for (PointLight& light : aLights)
     //Render a fullscreen quad with additive blending to add the colors of the different point lights to the scene using the G-Buffer for lighting and albedo data.
     
     //I use push constants to push the light data to the GPU
-	vkCmdPushConstants(cmdBuffer, myPipelineLayouts.deferred, VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(PointLight), &light);
-	vkCmdBindDescriptorSets(cmdBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, myPipelineLayouts.deferred, 0, 1, &myDescriptorSet, 0, nullptr);
-	vkCmdBindPipeline(cmdBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, myPipelines.deferred);
-	vkCmdBindVertexBuffers(cmdBuffer, 0, 1, &myQuad.GetVertexBuffer().buffer, offsets);
-	vkCmdBindIndexBuffer(cmdBuffer, myQuad.GetIndexBuffer().buffer, 0, VK_INDEX_TYPE_UINT32);
-	vkCmdDrawIndexed(cmdBuffer, 6, 1, 0, 0, 1);
+    vkCmdPushConstants(cmdBuffer, myPipelineLayouts.deferred, VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(PointLight), &light);
+    vkCmdBindDescriptorSets(cmdBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, myPipelineLayouts.deferred, 0, 1, &myDescriptorSet, 0, nullptr);
+    vkCmdBindPipeline(cmdBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, myPipelines.deferred);
+    vkCmdBindVertexBuffers(cmdBuffer, 0, 1, &myQuad.GetVertexBuffer().buffer, offsets);
+    vkCmdBindIndexBuffer(cmdBuffer, myQuad.GetIndexBuffer().buffer, 0, VK_INDEX_TYPE_UINT32);
+    vkCmdDrawIndexed(cmdBuffer, 6, 1, 0, 0, 1);
 }
 //End the render pass - present to backbuffer
 vkCmdEndRenderPass(cmdBuffer);
@@ -79,19 +79,19 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
 {%highlight cpp%}
     //renderer.cpp
     //Wait until we have an image, and then signal that
-    submitInfo.pCommandBuffers = &myFramework->myCommandBuffers[idx];
-    submitInfo.pWaitSemaphores = &myFramework->myImageAvailableSemaphores[myFramework->myCurrentFrame];
+    submitInfo.pCommandBuffers = &myCommandBuffers[idx];
+    submitInfo.pWaitSemaphores = &myImageAvailableSemaphores[myCurrentFrame];
     submitInfo.pSignalSemaphores = &myOffscreenSemaphore;
-    VkResult result = vkQueueSubmit(myFramework->myGraphicsQueue, 1, &submitInfo, VK_NULL_HANDLE);
+    VkResult result = vkQueueSubmit(myGraphicsQueue, 1, &submitInfo, VK_NULL_HANDLE);
     if (result != VK_SUCCESS) ...
 
-    BuildDeferredCommandBuffers(myFramework->mySwapChainFramebuffers[idx]); 
+    BuildDeferredCommandBuffers(mySwapChainFramebuffers[idx]); 
 
     //Wait for the offscreen rendering to be done, and signal the render finished semaphore when done, so we can present to the backbuffer.
     submitInfo.pWaitSemaphores = &myOffscreenSemaphore;
-    submitInfo.pSignalSemaphores = &myFramework->myRenderFinishedSemaphores[myFramework->myCurrentFrame];
+    submitInfo.pSignalSemaphores = &myRenderFinishedSemaphores[myCurrentFrame];
     submitInfo.pCommandBuffers = &myDeferredCommandBuffer;  
-    result = vkQueueSubmit(myFramework->myGraphicsQueue, 1, &submitInfo, myFramework->myInFlightFences[myFramework->myCurrentFrame]);
+    result = vkQueueSubmit(myGraphicsQueue, 1, &submitInfo, myInFlightFences[myCurrentFrame]);
     if (result != VK_SUCCESS) ...
 {%endhighlight%}
 
