@@ -4,10 +4,7 @@ img: vulkan.gif
 description: Vulkan Deferred Renderer
 ---
 
-## Final product:
-
-![](../assets/vulkan.gif)
-
+# Deferred Renderer written in Vulkan
 
 ## Details:
 - 5 Weeks Half-Time
@@ -97,6 +94,10 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
     result = vkQueueSubmit(myFramework->myGraphicsQueue, 1, &submitInfo, myFramework->myInFlightFences[myFramework->myCurrentFrame]);
     if (result != VK_SUCCESS) ...
 {%endhighlight%}
+
+## Final product
+
+![](../assets/vulkan.gif)
 
 ## Thoughts
 Further extensions and features to this renderer would be the ability to perform Post-Processing and add different light types, such as Directional Lights, Spot Lights and Area Lights, and also modifying the API to be more user friendly, as it isnt very easy to use and modify in it's current state.
