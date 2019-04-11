@@ -1,6 +1,6 @@
 ---
 layout: post
-img: vulkan.gif
+img: vulkan.png
 description: Vulkan Deferred Renderer
 ---
 
