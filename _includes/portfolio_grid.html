@@ -2,6 +2,7 @@
     <div class="pf-wrapper">
         <div class="pf-container">
             {% for post in site.posts %}
+            {% if post.onhome %}
             <a class="pf-project" href="{{ post.url }}">
                 <figure>
                     <img src="assets/{{ post.img }}" alt="What's this?" title="{{post.title}}">
@@ -13,6 +14,7 @@
                     </figcaption>
                 </figure>
             </a>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

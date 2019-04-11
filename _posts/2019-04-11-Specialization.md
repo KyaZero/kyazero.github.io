@@ -2,6 +2,7 @@
 layout: post
 img: vulkan.png
 description: Vulkan Deferred Renderer
+onhome: true
 ---
 
 # Deferred Renderer written in Vulkan
