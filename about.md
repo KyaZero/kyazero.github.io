@@ -3,6 +3,6 @@ layout: page
 title: "About"
 ---
 
-Hi I'm Christopher Gullberg Brady!
+I'm an engine/graphics programmer with a passion for creating cool things!
 
-[CV](https://www.youtube.com)
+[Here](../assets/resume.pdf) is my resume.
