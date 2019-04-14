@@ -113,7 +113,7 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
 ## Thoughts
 Further extensions and features to this renderer would be the ability to perform Post-Processing and add different light types, such as Directional Lights, Spot Lights and Area Lights, and also modifying the API to be more user friendly, as it isnt very easy to use and modify in it's current state.
 
-The major constraint on what could be done was the lack of time to do experiment with a bunch of different techniques. Even though I was under such short time constraints I still felt that I learned a tremendous amount and have gotten a far better insight into how modern GPU's work, much more so than I did while writing our engine in DirectX11.
+The major constraint on what could be done was the lack of time to experiment with a bunch of different techniques. Even though I was under such short time constraints I still felt that I learned a tremendous amount and have gotten a far better insight into how modern GPU's work, much more so than I did while writing our engine in DirectX11.
 
 This post is a quite slimmed down version of how it works, as I couldnt fit everything necessary for deferred shading in Vulkan into one post.
 

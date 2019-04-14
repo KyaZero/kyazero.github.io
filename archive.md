@@ -1,4 +1,4 @@
 ---
 layout: home
-title: "Archive"
+title: "Game Projects"
 ---

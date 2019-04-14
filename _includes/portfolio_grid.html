@@ -5,7 +5,7 @@
             {% if post.onhome %}
             <a class="pf-project" href="{{ post.url }}">
                 <figure>
-                    <img src="assets/{{ post.img }}" alt="What's this?" title="{{post.title}}">
+                    <img src="assets/{{ post.img }}" alt="{{ post.description }}" title="{{post.title}}">
                     <figcaption>
                         <div class="pf-div">
                             <span class="desc">{{post.title}}: {{ post.description }}</span>

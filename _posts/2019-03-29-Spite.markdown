@@ -1,7 +1,27 @@
 ---
 layout: post
 img: spite.png
-description: Top Down RPG
+description: 3D Top Down RPG
 onhome: true
+project: true
 ---
-hah aspite
+## Trailer
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/w8NwY8uhLVo' frameborder='0' allowfullscreen></iframe></div>
+
+## Project Details
+- 3D Top Down RPG
+- 10 weeks half-time
+- Made with our own C++ DirectX11 engine
+
+## Contributions
+- **Omnidirectional Shadows** - I wanted to implement dynamic omnidirectional shadow mapping because it looks really cool in the games that have it, and therefore I thought it would be a good addition to our engine.
+- **Spotlight Shadows** - I implemented spotlight shadowmapping so that our level designers could place them down to improve the look of our game.
+- **PBR** - I reworked our PBR to match substance painter's PBR, as our old one would block light the more metallic a surface was, and considering we wanted quite a bit of metallic objects that was unreasonable.
+- **Player** - I wrote the player for this game, using a finite state machine to keep all the different ability states and such with well defined in's and out's.
+- **Material System** - I implemented a material system which allowed for anyone to set textures, shaders, and settings such as if they should cast shadows to any model, which allowed our artists more creative freedom.
+- **Post Processing** - I implemented a bunch of post processing effects for this game, such as vignette and improved our SSAO.
+- **Camera** - I wrote the camera, added a smooth lerp and camera shake that feels good using trauma and other techniques from [this](https://www.youtube.com/watch?v=tu-Qe66AvtY) talk.
+- **Fog** - I improved upon my distance-based fog implementation, adding height-based fog and a bunch of values for our artists to tweak with.
+
+## Screenshot
+![]()

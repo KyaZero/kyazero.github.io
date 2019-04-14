@@ -1,0 +1,25 @@
+---
+layout: post
+img: hilo.png
+description: 3D Space Shooter
+onhome: true
+project: true
+---
+## Trailer
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/y5kXN_HOO6s' frameborder='0' allowfullscreen></iframe></div>
+
+## Project Details
+- 3D Space Shooter
+- 10 weeks half-time
+- Made with our own C++ DirectX11 engine
+
+## Contributions
+- **Engine** - I wrote most of the core engine framework together with another programmer.
+- **Rendering** - Because we had an awesome threading system in place very early I had to focus on keeping all the rendering multithreaded. I worked with another programmer to implement forward rendering. I then later implemented a deferred renderer as well as a basic particle system that would later be replaced, and also converted the forward renderer to only be for alpha objects and objects that needed to be rendered separately such as if they needed separate pixel shaders etc.
+- **File watcher** - I wrote a file watcher class that made use of std::filesystem to hot-reload any file you want.
+- **Shaders** - I wrote a wrapper around shaders that allowed for hot-reloading and instantiation of shaders as well as being able to send custom data in the form of a constant buffer to them.
+- **Post Processing** - I added support for post processing effects and used it to implement bloom, chromatic aberration, basic SSAO, FXAA and distance-based fog.
+- **Sprites** - I added support for 2D sprite rendering in our engine, mainly for use in our UI and menus.
+
+## Screenshot
+![]()

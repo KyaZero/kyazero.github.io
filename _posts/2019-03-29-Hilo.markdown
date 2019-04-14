@@ -1,8 +1,0 @@
----
-layout: post
-img: hilo.png
-description: 3D Space Shooter
-onhome: true
----
-
-haha hilo
