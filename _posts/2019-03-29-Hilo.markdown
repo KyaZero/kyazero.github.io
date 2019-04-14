@@ -1,6 +1,6 @@
 ---
 layout: post
-img: mockup.jpg
+img: hilo.png
 description: 3D Space Shooter
 onhome: true
 ---

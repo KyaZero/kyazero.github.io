@@ -7,6 +7,9 @@ onhome: true
 
 # Deferred Renderer written in Vulkan
 
+## Screenshot
+![](../assets/vulkan.png)
+
 ## Details:
 - 5 Weeks Half-Time
 - Written from scratch in c++
@@ -19,9 +22,16 @@ The main difference between Vulkan and a traditional API such as DirectX11 and O
 
 Pipelines in Vulkan contain everything the GPU needs to know when rendering, and if you want to switch a shader in Vulkan you have to create a new VkPipeline object for each combination of shaders/stages, as opposed to doing something as trivial as `context->PSSetShader(pixelShader)` in DirectX11
 
+Another thing that I can touch on are semaphores and fences, as they are the way that you will be synchronizing the GPU and CPU. They are objects which can be used for coordinating operations by having one operation signal and another operation wait for a fence/semaphore to go from their unsignaled state to a signaled state. The real difference between them is that fences can be waited on using functions such as `vkWaitForFences` and semaphores cannot. Therefore fences are used to synchronize operations between CPU and GPU, whilst semaphores only synchronize the GPU's operations.
+
 ## How it works
-How I record the draw calls for every model in my scene into a separate secondary command buffer per model, and then run `vkCmdExecuteCommands(...)` on the primary command buffer with the list of secondary commands. 
-The reason I set it up in this manner is so that I eventually could generate all the secondary command buffers on different threads, and later submit it into the primary command buffer, allowing for more multithreading than would be possible in DX11 and OpenGL. This was however out of the scope of such a short project, but I hope to utilize this concept when I decide to work more on it. The secondary commands bind the offscreen pipeline which renders to the G-Buffer.
+After I had a triangle up and running I worked on getting model loading which was surprisingly a small step in Vulkan, mostly because I already had vertex and index buffers already set up and thus I could just replace them and it was all well from there on out. Or so I thought, I had to figure out a way to link textures to a model - and decided upon giving each separate model their own descriptor set which specified the samplers and textures it would use.
+
+Once I had models up and running I worked on using secondary command buffers for recording the model draw commands into, and then running `vkCmdExecuteCommands(...)` on the primary command buffer once I had filled all the secondary ones.
+The reason I set it up in this manner is so that I eventually could generate all the secondary command buffers on different threads, and later submit it into the primary command buffer, allowing for more multithreading than would be possible in DX11 and OpenGL. This was however out of the scope of such a short project, but I hope to utilize this concept when I decide to work more on it.
+
+I set up two different pipelines, one for offscreen rendering and one for the deferred composition.
+Using this I had the models bind the offscreen pipeline whilst recording the commands, so that we render it to the G-Buffer.
 
 When inspecting a frame in RenderDoc the G-Buffer looks like this: 
 
@@ -34,7 +44,7 @@ From left to right:
 - Material (roughness, metalness, ambient occlusion)
 
 After this I run the deferred lighting pass by looping through all the lights and recording the commands into the deferred command buffer that I have setup:
-{%highlight cpp%}
+```cpp
 //renderer.cpp
 //Begin the render pass
 vkCmdBeginRenderPass(cmdBuffer, &renderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
@@ -52,12 +62,12 @@ for (PointLight& light : aLights)
 }
 //End the render pass - present to backbuffer
 vkCmdEndRenderPass(cmdBuffer);
-{%endhighlight%}
+```
 
-This render pass performs lighting and additively applies it to the (when cleared) black image, thus correctly blending the results. Currently the only type of light I have support for are Point Lights, due to a lack of time mostly.
+This render pass performs lighting and additively applies it to the (when cleared) black image, thus correctly blending the results. Currently the only type of light I have support for are Point Lights, due to a lack of time.
 
 The deferred shader is mostly very straightforward: 
-{%highlight cpp%}
+```glsl
     //deferred.frag
     //Grab values from G-Buffer such as normal, position, albedo, roughness, etc...
     //Compute toEye vector and toLight, as well as the distance
@@ -74,10 +84,10 @@ The deferred shader is mostly very straightforward:
 
     //Return the color
     outFragcolor = vec4(color, 1.0);
-{%endhighlight%}
+```
 
 To use the separate passes I needed to call VkQueueSubmit twice, with different semaphores and commandbuffers:
-{%highlight cpp%}
+```cpp
     //renderer.cpp
     //Wait until we have an image, and then signal that
     submitInfo.pCommandBuffers = &myCommandBuffers[idx];
@@ -94,7 +104,7 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
     submitInfo.pCommandBuffers = &myDeferredCommandBuffer;  
     result = vkQueueSubmit(myGraphicsQueue, 1, &submitInfo, myInFlightFences[myCurrentFrame]);
     if (result != VK_SUCCESS) ...
-{%endhighlight%}
+```
 
 ## Final product
 
@@ -104,6 +114,8 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
 Further extensions and features to this renderer would be the ability to perform Post-Processing and add different light types, such as Directional Lights, Spot Lights and Area Lights, and also modifying the API to be more user friendly, as it isnt very easy to use and modify in it's current state.
 
 The major constraint on what could be done was the lack of time to do experiment with a bunch of different techniques. Even though I was under such short time constraints I still felt that I learned a tremendous amount and have gotten a far better insight into how modern GPU's work, much more so than I did while writing our engine in DirectX11.
+
+This post is a quite slimmed down version of how it works, as I couldnt fit everything necessary for deferred shading in Vulkan into one post.
 
 ## Resources
 I found [this](https://vulkan-tutorial.com/ "Vulkan Tutorial") website to be a great starting point for anyone interested in Vulkan, as everything was thoroughly explained along the way and I got a general understanding of how the pipeline in a Vulkan application can be.

@@ -1,6 +1,6 @@
 ---
 layout: post
-img: mockup.jpg
+img: spite.png
 description: Top Down RPG
 onhome: true
 ---
