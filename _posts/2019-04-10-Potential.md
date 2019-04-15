@@ -1,6 +1,6 @@
 ---
 layout: post
-img: potential.png
+img: Potential_Screenshot_01.png
 description: First-Person Shooter
 onhome: true
 project: true
@@ -20,4 +20,4 @@ project: true
 - **First person camera** - I wrote the camera, used raw input to make it more responsive and tweaked the camera shake from the last [project](/Spite/).
 
 ## Screenshot
-![]()
+![](../assets/img/Potential_Screenshot_01.png)

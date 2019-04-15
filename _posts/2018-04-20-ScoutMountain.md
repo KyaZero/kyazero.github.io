@@ -20,5 +20,9 @@ project: true
 - **Particle System** - I wrote a particle system based on [Löve2D](https://love2d.org/)'s interface with support for hot-loading and many tweakable parameters such as radial acceleration and tangential velocity.
 - **Post Processing** - I implemented a shockwave shader effect when dashing, and also added several post processing effects such as chromatic aberration and a grayscale filter
 
-## Screenshot
-![]()
+## Screenshots
+![](../assets/img/ScoutMountain_Screenshot_01.png)
+![](../assets/img/ScoutMountain_Screenshot_02.png)
+![](../assets/img/ScoutMountain_Screenshot_03.png)
+![](../assets/img/ScoutMountain_Screenshot_04.png)
+![](../assets/img/ScoutMountain_Screenshot_05.png)

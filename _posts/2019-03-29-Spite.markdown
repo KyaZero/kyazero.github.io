@@ -1,6 +1,6 @@
 ---
 layout: post
-img: spite.png
+img: Spite_Screenshot_01.png
 description: 3D Top Down RPG
 onhome: true
 project: true
@@ -23,5 +23,9 @@ project: true
 - **Camera** - I wrote the camera, added a smooth lerp and camera shake that feels good using trauma and other techniques from [this](https://www.youtube.com/watch?v=tu-Qe66AvtY) talk.
 - **Fog** - I improved upon my distance-based fog implementation, adding height-based fog and a bunch of values for our artists to tweak with.
 
-## Screenshot
-![]()
+## Screenshots
+![](../assets/img/Spite_Screenshot_01.png)
+![](../assets/img/Spite_Screenshot_02.png)
+![](../assets/img/Spite_Screenshot_03.png)
+![](../assets/img/Spite_Screenshot_04.png)
+![](../assets/img/Spite_Screenshot_05.png)

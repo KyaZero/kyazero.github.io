@@ -19,5 +19,9 @@ project: true
 - **Shop** - I implemented the whole shop system, both how it works internally and all the UI for it.
 - **Bosses** - I implemented the final boss as well as helped work on the other bosses along with another programmer.
 
-## Screenshot
-![]()
+## Screenshots
+![](../assets/img/AFistfulofBounties_Screenshot_01.png)
+![](../assets/img/AFistfulofBounties_Screenshot_02.png)
+![](../assets/img/AFistfulofBounties_Screenshot_03.png)
+![](../assets/img/AFistfulofBounties_Screenshot_04.png)
+![](../assets/img/AFistfulofBounties_Screenshot_05.png)

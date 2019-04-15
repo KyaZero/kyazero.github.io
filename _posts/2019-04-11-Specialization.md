@@ -8,7 +8,7 @@ onhome: true
 # Deferred Renderer written in Vulkan
 
 ## Screenshot
-![](../assets/vulkan.png)
+![](../assets/img/vulkan.png)
 
 ## Details:
 - 5 Weeks Half-Time
@@ -35,7 +35,7 @@ Using this I had the models bind the offscreen pipeline whilst recording the com
 
 When inspecting a frame in RenderDoc the G-Buffer looks like this: 
 
-![](../assets/gbuffer.png)
+![](../assets/img/gbuffer.png)
 
 From left to right: 
 - Position 
@@ -108,7 +108,7 @@ To use the separate passes I needed to call VkQueueSubmit twice, with different 
 
 ## Final product
 
-![](../assets/vulkan.gif)
+![](../assets/img/vulkan.gif)
 
 ## Thoughts
 Further extensions and features to this renderer would be the ability to perform Post-Processing and add different light types, such as Directional Lights, Spot Lights and Area Lights, and also modifying the API to be more user friendly, as it isnt very easy to use and modify in it's current state.

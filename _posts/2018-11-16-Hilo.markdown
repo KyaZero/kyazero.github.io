@@ -1,6 +1,6 @@
 ---
 layout: post
-img: hilo.png
+img: Hilo_Screenshot_01.png
 description: 3D Space Shooter
 onhome: true
 project: true
@@ -21,5 +21,9 @@ project: true
 - **Post Processing** - I added support for post processing effects and used it to implement bloom, chromatic aberration, basic SSAO, FXAA and distance-based fog.
 - **Sprites** - I added support for 2D sprite rendering in our engine, mainly for use in our UI and menus.
 
-## Screenshot
-![]()
+## Screenshots
+![](../assets/img/Hilo_Screenshot_01.png)
+![](../assets/img/Hilo_Screenshot_02.png)
+![](../assets/img/Hilo_Screenshot_03.png)
+![](../assets/img/Hilo_Screenshot_04.png)
+![](../assets/img/Hilo_Screenshot_05.png)
