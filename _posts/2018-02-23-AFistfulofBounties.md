@@ -20,6 +20,7 @@ project: true
 - **Bosses** - I implemented the final boss as well as helped work on the other bosses along with another programmer.
 
 ## Screenshots
+---
 ![](../assets/img/AFistfulofBounties_Screenshot_01.png)
 ![](../assets/img/AFistfulofBounties_Screenshot_02.png)
 ![](../assets/img/AFistfulofBounties_Screenshot_03.png)

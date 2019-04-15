@@ -19,5 +19,6 @@ project: true
 - **Material system improvements** - I allowed for artists to configure custom data that they could send as a constant buffer to the shaders, allowing for cool vertex animations and such.
 - **First person camera** - I wrote the camera, used raw input to make it more responsive and tweaked the camera shake from the last [project](/Spite/).
 
-## Screenshot
+## Screenshots
+---
 ![](../assets/img/Potential_Screenshot_01.png)

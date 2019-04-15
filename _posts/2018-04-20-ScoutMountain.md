@@ -21,6 +21,7 @@ project: true
 - **Post Processing** - I implemented a shockwave shader effect when dashing, and also added several post processing effects such as chromatic aberration and a grayscale filter
 
 ## Screenshots
+---
 ![](../assets/img/ScoutMountain_Screenshot_01.png)
 ![](../assets/img/ScoutMountain_Screenshot_02.png)
 ![](../assets/img/ScoutMountain_Screenshot_03.png)

@@ -20,6 +20,7 @@ project: true
 - **Particle System** - I used and improved upon my particle system from last [project](/ScoutMountain/)
 
 ## Screenshots
+---
 ![](../assets/img/SwordLord_Screenshot_01.png)
 ![](../assets/img/SwordLord_Screenshot_02.png)
 ![](../assets/img/SwordLord_Screenshot_03.png)

@@ -24,6 +24,7 @@ project: true
 - **Fog** - I improved upon my distance-based fog implementation, adding height-based fog and a bunch of values for our artists to tweak with.
 
 ## Screenshots
+---
 ![](../assets/img/Spite_Screenshot_01.png)
 ![](../assets/img/Spite_Screenshot_02.png)
 ![](../assets/img/Spite_Screenshot_03.png)

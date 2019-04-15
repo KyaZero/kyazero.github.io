@@ -22,6 +22,7 @@ project: true
 - **Sprites** - I added support for 2D sprite rendering in our engine, mainly for use in our UI and menus.
 
 ## Screenshots
+---
 ![](../assets/img/Hilo_Screenshot_01.png)
 ![](../assets/img/Hilo_Screenshot_02.png)
 ![](../assets/img/Hilo_Screenshot_03.png)
