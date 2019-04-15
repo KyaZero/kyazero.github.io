@@ -11,7 +11,7 @@ project: true
 ## Project Details
 - 2D Top down adventure game
 - 8 weeks half-time
-- Made with an our house 2D C++ engine
+- Made with an in-house 2D C++ engine
 
 ## Contributions
 - **Player** - I wrote the player and tweaked all the metrics to match our reference game Celeste.

@@ -11,7 +11,7 @@ project: true
 ## Project Details
 - 2D Shoot em Up
 - 8 weeks half-time
-- Made with an our house 2D C++ engine
+- Made with an in-house 2D C++ engine
 
 ## Contributions
 - **Player** - I wrote the player and all the weapons you could use.
