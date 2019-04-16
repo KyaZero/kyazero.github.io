@@ -18,7 +18,7 @@ onhome: true
 The subject of my specialization course at The Game Assembly was to write a Deferred Renderer in Vulkan from scratch and the goal of this was to learn more about and further my skills in rendering and how the new graphics API's work.
 
 ## Differences in Vulkan
-The main difference between Vulkan and a traditional API such as DirectX11 and OpenGL is the fact that you have to be explicit about most everything that happens in your application, whether that be synchronizing the GPU explicitly or condensing all the fixed function state(rasterizer state, topology...) and shaders into one VkPipeline object.
+The main difference between Vulkan and a traditional API such as DirectX11 and OpenGL is the fact that you have to be explicit about basically everything that happens in your application, whether that be synchronizing the GPU explicitly or condensing all the fixed function state(rasterizer state, topology...) and shaders into one VkPipeline object.
 
 Pipelines in Vulkan contain everything the GPU needs to know when rendering, and if you want to switch a shader in Vulkan you have to create a new VkPipeline object for each combination of shaders/stages, as opposed to doing something as trivial as `context->PSSetShader(pixelShader)` in DirectX11
 
