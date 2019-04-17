@@ -12,7 +12,7 @@ There are a bunch of talented people here and the links to their websites are be
 - [Christopher Gullberg Brady](http://www.christophergullbergbrady.com)
 - [Niklas Andersson](https://niklas.computer)
 - [Martin Ström](http://martin-strom.com)
-- [Morris Ahlstrand](https://www.linkedin.com/in/morris-ahlstrand-a279a911b/)
+- [Morris Ahlstrand](http://www.morrisahlstrand.com/)
 - [Robert Parell](https://www.robertparrell.com/)
 - [Henrik Jönsson](https://www.henrikjonsson.me/)
 
